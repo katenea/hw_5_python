@@ -51,6 +51,7 @@ def get_correct_email(email_list: list[str]) -> list[str]:
     correct_domain = ('.com', '.ru','.net')
     correct_email = []
     for email in email_list:
+        email = email.strip().lower()
         if '@' in email and email.endswith(correct_domain):
             correct_email.append(email)
     return correct_email
